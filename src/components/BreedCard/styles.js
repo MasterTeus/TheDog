@@ -5,29 +5,25 @@ export const Separator = styled.View`
   height: 16px;
 `;
 export const Container = styled.TouchableOpacity`
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 4px;
+
+  width: 48%;
+  background-color: #fff;
+
+  elevation: 1;
 `;
 export const Image = styled.Image`
   background-color: #fff;
   border-radius: 10px;
-  width: 130px;
-  height: 170px;
+  height: 80px;
+  width: 100%;
 `;
-export const Paper = styled.View`
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background-color: #fff;
-  padding: 10px;
 
-  height: 120px;
-  width: 65%;
-
-  elevation: 5;
-`;
 export const Name = styled.Text`
-  color: #306060;
-  font-size: 18px;
+  color: #29323c;
+
   font-weight: bold;
 `;
 export const Temperament = styled.Text`
@@ -47,11 +43,11 @@ export const Country = styled.View`
   flex-direction: row;
 `;
 export const InfoText = styled.Text`
-  font-weight: bold;
   left: 4px;
+  font-size: 10px;
 `;
 export const Icon = styled(Feather)`
-  background-color: #158d8d40;
+  background-color: #FF084420;
   padding: 5px;
   border-radius: 20px;
 `;

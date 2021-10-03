@@ -23,9 +23,10 @@ export const TrailLeft = styled.ImageBackground`
   height: 120%;
   position: absolute;
 
-  left: -100px;
+  left: -200px;
   bottom: -90px;
 
+  opacity: 0.4;
   transform: rotateZ(70deg);
 `;
 

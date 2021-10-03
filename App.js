@@ -5,7 +5,7 @@ import { Router } from "./Router";
 export function App() {
   return (
     <>
-      <StatusBar />
+      <StatusBar backgroundColor="#000" />
       <Router />
     </>
   );

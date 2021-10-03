@@ -13,8 +13,6 @@ export function ListBreeds() {
     // console.log(data);
     setBreeds([...breeds, ...data]);
 
-    console.log(pageNumber);
-
     setPageNumber(pageNumber + 1);
   }
 
@@ -24,12 +22,18 @@ export function ListBreeds() {
 
   return (
     <FlatList
+      numColumns={2}
       ListFooterComponent={() => (
-        <ActivityIndicator size="small" color="#306060" />
+        <ActivityIndicator
+          size="small"
+          color="#000"
+          style={{ marginTop: 16 }}
+        />
       )}
       data={breeds}
       keyExtractor={(item) => String(item.id)}
       style={{ width: "100%" }}
+      columnWrapperStyle={{ justifyContent: "space-between" }}
       contentContainerStyle={{ padding: 16 }}
       ItemSeparatorComponent={() => <Separator />}
       onEndReached={getBreeds}
