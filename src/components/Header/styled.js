@@ -1,11 +1,32 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient)`
   padding: 16px;
+  position: relative;
 
-  /* height: 220px; */
   width: 100%;
-  background-color: #101010;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+`;
+
+export const TrailRight = styled.ImageBackground`
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  right: -80px;
+  top: -100px;
+`;
+export const TrailLeft = styled.ImageBackground`
+  width: 120%;
+  height: 120%;
+  position: absolute;
+
+  left: -100px;
+  bottom: -90px;
+
+  transform: rotateZ(70deg);
 `;
 
 export const WelcomeSection = styled.View`
@@ -14,7 +35,7 @@ export const WelcomeSection = styled.View`
 
   border-bottom-width: 2px;
   padding-bottom: 16px;
-  border-bottom-color: #ffffff40;
+  border-bottom-color: #ffffff20;
 `;
 
 export const Logo = styled.Image`

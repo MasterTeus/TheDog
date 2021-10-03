@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, ContentIcon, IconBreed, Title } from "./styled";
 
-export default function CategorieCard({ item, onPress }) {
+export function StorieCard({ item, onPress }) {
   return (
     <Container onPress={onPress}>
       <ContentIcon>

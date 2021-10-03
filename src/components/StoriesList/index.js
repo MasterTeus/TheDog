@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, Modal, ActivityIndicator } from "react-native";
 import { categories } from "../../helpers/mock";
-import CategorieCard from "../CategorieCard";
+import { StorieCard } from "../StorieCard";
 
 import {
   Container,
@@ -18,7 +18,7 @@ import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { api } from "../../services/api";
 
-export function CatergoriesBreeds() {
+export function StoriesList() {
   const [dogData, setDogData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [mock, setMock] = useState(null);
@@ -27,16 +27,15 @@ export function CatergoriesBreeds() {
     const { data } = await api.get(
       `https://api.thedogapi.com/v1/images/search?limit=3&breed_id=${id}`
     );
-    console.log(modalVisible);
     setDogData(data);
   }
 
   function openModal(breed) {
     setModalVisible(true);
-
     setMock(breed);
     getDogData(breed.id_images);
   }
+
   function closeModal() {
     setModalVisible(!modalVisible);
     setMock(null);
@@ -52,7 +51,7 @@ export function CatergoriesBreeds() {
         ItemSeparatorComponent={() => <Separator />}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <CategorieCard onPress={() => openModal(item)} item={item} />
+          <StorieCard onPress={() => openModal(item)} item={item} />
         )}
       />
 
