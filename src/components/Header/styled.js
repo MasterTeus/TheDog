@@ -5,7 +5,7 @@ export const Container = styled.View`
 
   /* height: 220px; */
   width: 100%;
-  background-color: black;
+  background-color: #101010;
 `;
 
 export const WelcomeSection = styled.View`
@@ -49,11 +49,4 @@ export const InputSearch = styled.TextInput`
   padding: 0px;
   margin-left: 8px;
   color: #fff;
-`;
-
-export const CatergoriesBreeds = styled.View`
-  margin-top: 16px;
-`;
-export const Separator = styled.View`
-  width: 16px;
 `;

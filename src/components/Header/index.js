@@ -1,7 +1,5 @@
 import React from "react";
 import { useRef } from "react";
-import { Fragment } from "react";
-import { View, Text, TextInput, FlatList } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
 import {
@@ -12,15 +10,12 @@ import {
   WellcomeMessage,
   WelcomeTextsSection,
   Search,
-  InputSearch,
-  CatergoriesBreeds,
-  Separator
+  InputSearch
 } from "./styled";
 
 //assets
 import logo from "../../assets/white-logo.png";
-import { categories } from "../../helpers/mock";
-import CategorieCard from "../CategorieCard";
+import { CatergoriesBreeds } from "../CatergoriesBreeds";
 
 export function Header() {
   const inputRef = useRef(null);
@@ -44,15 +39,7 @@ export function Header() {
         />
       </Search>
 
-      <CatergoriesBreeds>
-        <FlatList
-          data={categories}
-          horizontal
-          keyExtractor={() => String(Math.random())}
-          ItemSeparatorComponent={() => <Separator />}
-          renderItem={({ item }) => <CategorieCard item={item} />}
-        />
-      </CatergoriesBreeds>
+      <CatergoriesBreeds />
     </Container>
   );
 }

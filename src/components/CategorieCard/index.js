@@ -2,11 +2,11 @@ import React from "react";
 
 import { Container, ContentIcon, IconBreed, Title } from "./styled";
 
-export default function CategorieCard({ item }) {
+export default function CategorieCard({ item, onPress }) {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <ContentIcon>
-        <IconBreed source={item.icon} />
+        <IconBreed resizeMode="contain" source={item.icon} />
       </ContentIcon>
       <Title>{item.title}</Title>
     </Container>
