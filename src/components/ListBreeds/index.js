@@ -10,7 +10,6 @@ export function ListBreeds() {
 
   async function getBreeds() {
     const { data } = await api.get(`/breeds?limit=10&page=${pageNumber}`);
-    // console.log(data);
     setBreeds([...breeds, ...data]);
 
     setPageNumber(pageNumber + 1);

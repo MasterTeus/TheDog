@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRef } from "react";
-import { View } from "react-native";
+import { Text, View, Keyboard } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
 import {
@@ -13,16 +13,58 @@ import {
   WellcomeMessage,
   WelcomeTextsSection,
   Search,
-  InputSearch
+  InputSearch,
+  ResultsSearch,
+  ResultText,
+  ResultButton,
+  ClearInput
 } from "./styled";
 
 //assets
 import logo from "../../assets/white-logo.png";
 import { StoriesList } from "../StoriesList";
 import trail from "../../assets/trail.png";
+import { api } from "../../services/api";
 
 export function Header() {
   const inputRef = useRef(null);
+  const [value, setValue] = useState("");
+  const [results, setResults] = useState([]);
+
+  async function ChangeText(e) {
+    setValue(e);
+    const { data } = await api.get(
+      `https://api.thedogapi.com/v1/breeds/search?q=${e}`
+    );
+    setResults(data);
+  }
+
+  const ResultCard = ({ data }) => (
+    <ResultButton>
+      <ResultText>{data.name}</ResultText>
+    </ResultButton>
+  );
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => console.log("open")
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide"
+      // keyBoardHiden
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
+
+  function cleanInput() {
+    setValue("");
+    Keyboard.dismiss();
+  }
 
   return (
     <Container
@@ -47,8 +89,23 @@ export function Header() {
             placeholder="Husky Siberiano"
             placeholderTextColor="#ffffff40"
             ref={inputRef}
+            value={value}
+            onChangeText={ChangeText}
           />
+          {!!value.length && (
+            <ClearInput onPress={cleanInput}>
+              <Feather name="x" size={24} color="#ffffff" />
+            </ClearInput>
+          )}
         </Search>
+        {!!value.length && (
+          <ResultsSearch
+            contentContainerStyle={{ padding: 10 }}
+            data={results}
+            keyExtractor={(item) => String(item.id)}
+            renderItem={({ item }) => <ResultCard data={item} />}
+          />
+        )}
 
         <StoriesList />
       </View>

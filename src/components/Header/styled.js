@@ -8,6 +8,8 @@ export const Container = styled(LinearGradient)`
   width: 100%;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
+  z-index: 999;
 `;
 
 export const TrailRight = styled.ImageBackground`
@@ -64,6 +66,8 @@ export const Search = styled.TouchableOpacity`
 
   flex-direction: row;
   border-radius: 12px;
+
+  z-index: 999;
 `;
 
 export const InputSearch = styled.TextInput`
@@ -71,4 +75,24 @@ export const InputSearch = styled.TextInput`
   padding: 0px;
   margin-left: 8px;
   color: #fff;
+`;
+export const ResultsSearch = styled.FlatList`
+  margin-top: 4px;
+  width: 100%;
+  max-height: 200px;
+  min-height: 60px;
+  background-color: #fff;
+  border-radius: 12px;
+`;
+export const ResultText = styled.Text`
+  font-weight: bold;
+  color: #000;
+`;
+export const ResultButton = styled.TouchableOpacity`
+  padding: 10px;
+  border-bottom-color: #00000020;
+  border-bottom-width: 1px;
+`;
+export const ClearInput = styled.TouchableOpacity`
+  justify-content: center;
 `;
