@@ -32,8 +32,10 @@ export function ListBreeds() {
       data={breeds}
       keyExtractor={(item) => String(item.id)}
       style={{ width: "100%" }}
-      columnWrapperStyle={{ justifyContent: "space-between" }}
-      contentContainerStyle={{ padding: 16 }}
+      columnWrapperStyle={{
+        justifyContent: "space-between",
+        paddingHorizontal: 16
+      }}
       ItemSeparatorComponent={() => <Separator />}
       onEndReached={getBreeds}
       onEndReachedThreshold={0.8}

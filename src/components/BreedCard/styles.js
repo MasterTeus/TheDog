@@ -19,6 +19,7 @@ export const Image = styled.Image`
   border-radius: 10px;
   height: 80px;
   width: 100%;
+  background-color: #d1d1d140;
 `;
 
 export const Name = styled.Text`
@@ -47,7 +48,7 @@ export const InfoText = styled.Text`
   font-size: 10px;
 `;
 export const Icon = styled(Feather)`
-  background-color: #FF084420;
+  background-color: #ff084420;
   padding: 5px;
   border-radius: 20px;
 `;

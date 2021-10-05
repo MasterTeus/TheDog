@@ -24,9 +24,7 @@ export function StoriesList() {
   const [mock, setMock] = useState(null);
 
   async function getDogData(id) {
-    const { data } = await api.get(
-      `https://api.thedogapi.com/v1/images/search?limit=3&breed_id=${id}`
-    );
+    const { data } = await api.get(`/images/search?limit=3&breed_id=${id}`);
     setDogData(data);
   }
 

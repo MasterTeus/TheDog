@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 export const Container = styled(LinearGradient)`
   padding: 16px;
   position: relative;
+  margin-bottom: 16px;
 
   width: 100%;
   border-bottom-left-radius: 20px;
