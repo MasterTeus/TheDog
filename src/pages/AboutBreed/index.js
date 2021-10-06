@@ -42,10 +42,6 @@ export function AboutBreed({ navigation }) {
       `/images/search?limit=3&breed_id=${selectedBreed.id}&size=med`
     );
 
-    console.log(data[0]);
-    console.log("====================================");
-    console.log(selectedBreed);
-    console.log("====================================");
     setImages(data);
     if (!selectedBreed.image) {
       setImageSelected(data[0]?.url);

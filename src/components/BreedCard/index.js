@@ -24,8 +24,8 @@ export function BreedCard({ data }) {
   const { changeBreed } = useContext(BreedContext);
 
   function changeCard() {
-    changeBreed(data);
     navigation.navigate("AboutBreed");
+    changeBreed(data);
   }
 
   return (

@@ -42,8 +42,8 @@ export function Header() {
   }
 
   function changeCard(data) {
-    changeBreed(data);
     navigation.navigate("AboutBreed");
+    changeBreed(data);
   }
   const ResultCard = ({ data }) => (
     <ResultButton onPress={() => changeCard(data)} activeOpacity={1}>
