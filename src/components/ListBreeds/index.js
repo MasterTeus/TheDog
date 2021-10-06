@@ -26,8 +26,8 @@ export function ListBreeds() {
       ListFooterComponent={() => (
         <ActivityIndicator
           size="small"
-          color="#000"
-          style={{ marginTop: 16 }}
+          color="#EB133C"
+          style={{ marginVertical: 16 }}
         />
       )}
       data={breeds}

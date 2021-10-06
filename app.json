@@ -3,9 +3,14 @@
     "name": "TheDog",
     "slug": "TheDog",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#EB133C"
+    },
+    "assetBundlePatterns": ["**/*"]
   },
   "name": "TheDog"
 }
