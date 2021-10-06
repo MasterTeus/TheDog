@@ -8,9 +8,7 @@ import {
 } from "@expo/vector-icons";
 import { Foundation } from "@expo/vector-icons";
 import { useContext } from "react";
-import { View, Text, ScrollView } from "react-native";
 import { BreedContext } from "../../context/breed";
-import { api } from "../../services/api";
 import {
   Container,
   ButtonAction,
@@ -31,6 +29,7 @@ import {
   Value,
   Title
 } from "./styles";
+import { getPublicImage } from "../../services/connection";
 
 export function AboutBreed({ navigation }) {
   const { selectedBreed } = useContext(BreedContext);
@@ -38,13 +37,11 @@ export function AboutBreed({ navigation }) {
   const [imageSelected, setImageSelected] = useState(selectedBreed?.image?.url);
 
   async function getMoreInfoBreed() {
-    const { data } = await api.get(
-      `/images/search?limit=3&breed_id=${selectedBreed.id}&size=med`
-    );
+    const breedResult = await getPublicImage(selectedBreed.id);
 
-    setImages(data);
+    setImages(breedResult);
     if (!selectedBreed.image) {
-      setImageSelected(data[0]?.url);
+      setImageSelected(breedResult[0]?.url);
     }
   }
   useEffect(() => {
@@ -59,7 +56,7 @@ export function AboutBreed({ navigation }) {
         </ButtonBack>
         <Gradient colors={["transparent", "rgba(0,0,0,0.8)"]} />
         <DotContainer>
-          {images.map((item) => (
+          {images?.map((item) => (
             <ButtonAction
               key={item.id}
               onPress={() => setImageSelected(item.url)}
@@ -82,6 +79,7 @@ export function AboutBreed({ navigation }) {
 
       <ContainerInformation>
         <ContentCard>
+          
           <Card>
             <ContentIcon style={{ backgroundColor: "#F6416C20" }}>
               <FontAwesome name="heartbeat" size={32} color="#F6416C" />

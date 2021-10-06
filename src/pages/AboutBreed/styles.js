@@ -2,7 +2,9 @@ import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { HEIGHT, WIDTH } from "../../helpers/dimentions";
 
-export const Container = styled.ScrollView``;
+export const Container = styled.ScrollView`
+  flex: 1;
+`;
 
 export const ButtonAction = styled.TouchableOpacity`
   justify-content: center;
@@ -52,6 +54,7 @@ export const DotContainer = styled.View`
   position: absolute;
   right: 20px;
   bottom: 20px;
+  z-index: 99;
 `;
 
 export const BreedFastInfo = styled.View`
@@ -86,7 +89,7 @@ export const ContainerInformation = styled.View`
 `;
 export const InfoContent = styled.View`
   max-width: 80%;
-  left: 12px
+  left: 12px;
 `;
 export const ContentCard = styled.View`
   flex-direction: column;

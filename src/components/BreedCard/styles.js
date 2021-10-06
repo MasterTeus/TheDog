@@ -6,8 +6,9 @@ export const Separator = styled.View`
 `;
 export const Container = styled.TouchableOpacity`
   flex-direction: column;
-  border-radius: 15px;
-  padding: 4px;
+  border-radius: 25px;
+  padding: 6px;
+  padding-bottom: 16px;
 
   width: 48%;
   background-color: #fff;
@@ -16,10 +17,11 @@ export const Container = styled.TouchableOpacity`
 `;
 export const Image = styled.Image`
   background-color: #fff;
-  border-radius: 10px;
-  height: 80px;
+  border-radius: 20px;
+  height: 160px;
   width: 100%;
   background-color: #d1d1d140;
+  margin-bottom: 12px;
 `;
 
 export const Name = styled.Text`
@@ -47,7 +49,8 @@ export const InfoText = styled.Text`
   left: 4px;
   font-size: 10px;
 `;
-export const Icon = styled(Feather)`
+export const Icon = styled(Feather)``;
+export const IconContainer = styled.View`
   background-color: #ff084420;
   padding: 5px;
   border-radius: 20px;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { api } from "../../services/api";
+import { getPaginateBreeds } from "../../services/connection";
 import { BreedCard } from "../BreedCard";
 import { Separator } from "../BreedCard/styles";
 
@@ -9,8 +10,8 @@ export function ListBreeds() {
   const [breeds, setBreeds] = useState([]);
 
   async function getBreeds() {
-    const { data } = await api.get(`/breeds?limit=10&page=${pageNumber}`);
-    setBreeds([...breeds, ...data]);
+    const breedResult = await getPaginateBreeds(pageNumber);
+    setBreeds([...breeds, ...breedResult]);
 
     setPageNumber(pageNumber + 1);
   }

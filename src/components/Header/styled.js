@@ -1,59 +1,45 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 
-export const Container = styled(LinearGradient)`
-  padding: 16px;
-  position: relative;
+export const Container = styled.View`
   margin-bottom: 16px;
+  background-color: green;
 
-  width: 100%;
+  min-height: 200px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
   z-index: 999;
+  overflow: hidden;
 `;
 
-export const TrailRight = styled.ImageBackground`
-  width: 100%;
-  height: 100%;
+export const PetImage = styled.Image`
+  height: 260px;
+  width: 120px;
 
   position: absolute;
-  right: -80px;
-  top: -100px;
-`;
-export const TrailLeft = styled.ImageBackground`
-  width: 120%;
-  height: 120%;
-  position: absolute;
-
-  left: -200px;
-  bottom: -90px;
-
-  opacity: 0.4;
-  transform: rotateZ(70deg);
+  right: 20px;
+  top: -55px;
 `;
 
 export const WelcomeSection = styled.View`
-  flex-direction: row;
-  align-items: center;
-
-  border-bottom-width: 2px;
-  padding-bottom: 16px;
-  border-bottom-color: #ffffff20;
+  flex-direction: column;
 `;
 
 export const Logo = styled.Image`
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
 `;
 
 export const WelcomeTextsSection = styled.View`
-  margin-left: 8px;
+  margin-top: 8px;
   flex-direction: column;
 `;
+
 export const AppName = styled.Text`
   color: #fff;
   font-weight: bold;
+  font-size: 22px;
 `;
 export const WellcomeMessage = styled.Text`
   color: #fff;
@@ -61,8 +47,8 @@ export const WellcomeMessage = styled.Text`
 `;
 
 export const Search = styled.TouchableOpacity`
-  margin-top: 16px;
-  background-color: #ffffff20;
+  margin-top: 10px;
+  background-color: #ffffff;
   padding: 8px;
 
   flex-direction: row;
@@ -75,7 +61,7 @@ export const InputSearch = styled.TextInput`
   flex: 1;
   padding: 0px;
   margin-left: 8px;
-  color: #fff;
+  color: #000;
 `;
 export const ResultsSearch = styled.FlatList`
   margin-top: 4px;

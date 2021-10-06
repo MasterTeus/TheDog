@@ -14,7 +14,8 @@ import {
   Heat,
   Country,
   InfoText,
-  Icon
+  Icon,
+  IconContainer
 } from "./styles";
 import { BreedContext } from "../../context/breed";
 
@@ -39,18 +40,17 @@ export function BreedCard({ data }) {
       <MoreInfo>
         {data.life_span && (
           <Heat>
-            <Icon name="heart" size={12} color="#FF0844" />
+            <IconContainer>
+              <Icon name="heart" size={12} color="#FF0844" />
+            </IconContainer>
             <InfoText>{data?.life_span}</InfoText>
           </Heat>
         )}
         {data.country_code && (
           <Country>
-            <Icon
-              style={{ backgroundColor: "#00C6FB20" }}
-              name="map-pin"
-              size={12}
-              color="#005BEA"
-            />
+            <IconContainer style={{ backgroundColor: "#00C6FB20" }}>
+              <Icon name="map-pin" size={12} color="#005BEA" />
+            </IconContainer>
             <InfoText>{data?.country_code}</InfoText>
           </Country>
         )}
